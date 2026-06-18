@@ -9,16 +9,19 @@ Package license: MIT
 
 Summary: Package for lightweight representation of nuclear isotopes
 
+Development: https://github.com/ramp-nuclear/isotopes
+
 Documentation: https://ramp-nuclear.github.io/isotopes/
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=27766&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ramp-isotopes-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/ramp-isotopes-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/ramp-isotopes-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>

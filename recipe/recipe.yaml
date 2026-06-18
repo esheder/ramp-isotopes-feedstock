@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  python_min: "3.11"
+  version: "0.0.4"
+
+package:
+  name: ramp-isotopes
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/r/ramp-isotopes/ramp_isotopes-${{ version }}.tar.gz
+  sha256: e7ac30e795f4ec04748ace8d7d07c8a82acf1c8abadc46277a0bae9707f6c8ef
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools-scm
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - bidict
+    - scipy
+    - pandas
+
+tests:
+  - python:
+      imports:
+        - isotopes
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Package for lightweight representation of nuclear isotopes
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/ramp-nuclear/isotopes
+  repository: https://github.com/ramp-nuclear/isotopes
+  documentation: https://ramp-nuclear.github.io/isotopes/
+
+extra:
+  recipe-maintainers:
+    - esheder
